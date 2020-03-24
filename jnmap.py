@@ -19,7 +19,7 @@ print("[3] Nmap Heartbleed Vulner")
 print("[4] Nmap Subnet Scan")
 print("[5] Nmap Top Ports Scan")
 print("[6] Nmap SSH brute-force")
-print("[7] Nmap CVE detection using ")
+print("[7] Nmap CVE Detection")
 print("[8] Nmap Launching DOS")
 print("[9] EXIT")
 
@@ -92,7 +92,7 @@ elif option == 7:
 read Ip
 echo -n " Name for Scan : "
 read Name
-sudo -S nmap -Pn --script vuln $Ip ~/JNmapReports/$Name
+sudo -S nmap -Pn --script vuln $Ip -oN ~/JNmapReports/$Name
 echo "[+] Scan Complete [+]
 [*] Check Reports Dir. for Results [*]"
 """)
@@ -103,7 +103,7 @@ elif option == 8:
 read Ip
 echo -n " Name for Scan : "
 read Name
-sudo -S nmap $Ip -max-parallelism 800 -Pn --script http-slowloris --script-args http-slowloris.runforever=true ~/JNmapReports/$Name
+sudo -S nmap $Ip -max-parallelism 800 -Pn --script http-slowloris --script-args http-slowloris.runforever=true -oN ~/JNmapReports/$Name
 echo "[+] Scan Complete [+]
 [*] Check Reports Dir. for Results [*]"
 """)
