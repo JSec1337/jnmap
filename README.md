@@ -32,4 +32,4 @@ python3 jnmap.py
 </code></pre>
 <br>
 
-<img src="https://raw.githubusercontent.com/JSec1337/Scanner-CVE-2019-0708/master/bluk.png" alt="" aria-label="Team" src="" width=“50” height=“50”>
+<img src="https://raw.githubusercontent.com/JSec1337/jnmap/master/jnmap.png" alt="" aria-label="Team" src="" width=“50” height=“50”>
