@@ -21,7 +21,11 @@ print("[5] Nmap Top Ports Scan")
 print("[6] Nmap SSH brute-force")
 print("[7] Nmap CVE Detection")
 print("[8] Nmap Launching DOS")
-print("[9] EXIT")
+print("[9] Nmap Slowloris Check")
+print("[10] Nmap Check Poodle")
+print("[11] Nmap Check LDAP")
+print("[12] Nmap DNS Recursion")
+print("[13] EXIT")
 
 option = int(input("Enter number : \n"))
 
@@ -109,4 +113,44 @@ echo "[+] Scan Complete [+]
 """)
 
 elif option == 9:
+    os.system("""echo -n " Target : "
+read Ip
+echo -n " Name for Scan : "
+read Name
+sudo -S nmap --script http-slowloris-check $Ip -oN ~/JNmapReports/$Name
+echo "[+] Scan Complete [+]
+[*] Check Reports Dir. for Results [*]"
+""")
+
+elif option == 10:
+    os.system("""echo -n " Target : "
+read Ip
+echo -n " Name for Scan : "
+read Name
+sudo -S nmap -sV --version-light --script ssl-poodle -p 443 $Ip -oN ~/JNmapReports/$Name
+echo "[+] Scan Complete [+]
+[*] Check Reports Dir. for Results [*]"
+""")
+
+elif option == 11:
+    os.system("""echo -n " Target : "
+read Ip
+echo -n " Name for Scan : "
+read Name
+sudo -S nmap -p 389 --script ldap-rootdse $Ip -oN ~/JNmapReports/$Name
+echo "[+] Scan Complete [+]
+[*] Check Reports Dir. for Results [*]"
+""")
+
+elif option == 12:
+    os.system("""echo -n " Target : "
+read Ip
+echo -n " Name for Scan : "
+read Name
+sudo -S nmap -Pn -sU -p 53 --script=dns-recursion $Ip -oN ~/JNmapReports/$Name
+echo "[+] Scan Complete [+]
+[*] Check Reports Dir. for Results [*]"
+""")
+
+elif option == 13:
  exit;
