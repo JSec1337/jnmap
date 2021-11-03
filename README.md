@@ -32,4 +32,4 @@ python3 jnmap.py
 </code></pre>
 <br>
 
-<center><img src="https://raw.githubusercontent.com/JSec1337/jnmap/master/upjnmap.png" alt="" aria-label="Team" src="" width=“50” height=“50”></center>
+<img src="https://raw.githubusercontent.com/JSec1337/jnmap/master/upjnmap.png" alt="" aria-label="Team" class="center" src="" width=“50” height=“50”> 
